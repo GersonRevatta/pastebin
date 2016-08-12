@@ -1,8 +1,15 @@
-h3 {
+h3 , h4 {
 	text-align: center ;
 }
 
 
 body{
 	background: peru
+}
+
+
+
+.form_{
+	margin-left: 100px;
+	width: 1200px;
 }

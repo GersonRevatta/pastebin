@@ -13,7 +13,7 @@ from django.core.urlresolvers import reverse
 #def Reporte(request):
  #   return render(request,'template.html')
 
-
+#hola
 def crear(request):
     if request.POST:
         form = ArticuloForm(request.POST)

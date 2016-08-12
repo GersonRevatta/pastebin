@@ -38,12 +38,7 @@
                            	 	</a>
                             
                            </li> 
-                           <!-- 2er menu -->
-                           <li >
-                           		<a >
-                            	Eventos<span></span>
-                            	</a>
-                            </li>
+                          
                           
                        </ul>
                    </div>
@@ -57,34 +52,34 @@
 		<h3><center> <b>Pastebin</b></center></h3>
 		<br>
 
-		<!-- content -->
+		<!-- content 
 
-		<div class="container  ">
-			<div class=" col-md-6" >
-				<form  method="post">{% csrf_token %}
+		<div class="container form_ ">
+			<form class="" method="post">{% csrf_token %}
 				
-				<ul>
-				{{ form.as_ul }}
-				</ul>
-
+			
+				{{ form.as_ul }}				
+			
+		
 				<input type="submit" name="submit" value="Crear Articulo">
-				</form>
-			</div>
-
-			
-
-				
-			
-
+			</form>
 
 		</div>
-		
 
 		
 		<div>
 			
-		</div>
+		</div>-->
 		
+		<!-- -->
+	<form class="form_" method="post">
+	    {% csrf_token %}
+		
+		{{ form.cuerpo }}
+
+		<button type="submit" name="submit">Crear Pastebin</button>
+	</form>
+		<!--  -->
 			<div>
 				<p></p>
 			</div>
