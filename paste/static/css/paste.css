@@ -9,7 +9,33 @@ body{
 
 
 
-.form_{
+.form_  textarea{
 	margin-left: 100px;
 	width: 1200px;
+	height: 300px;
+
+}
+footer {
+    text-align: right;
+    color: #DDD;
+    font-size: 12px;
+}
+footer a { 
+    color: #CCC;
+}
+button {
+    background: red;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    color: white;
+    margin-left: 29px;
+    margin-top: 10px;
+    margin-left: 90px;
+}
+pre{margin-left: 100px;
+		width: 1200px;
+	height: 300px;
+
 }

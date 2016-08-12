@@ -25,9 +25,23 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
-
+    <!-- <script type="text/javascript">
+//<![CDATA[
+function numerar(){
+var nvalor="";
+var contenido = document.getElementById('textA').value;
+var lineas = contenido.split('\n');
+ 
+for(var i = 0;i < lineas.length;i++){
+nvalor  += (i+1) + ' ' +lineas[i] + '\n';
+}
+document.getElementById('textA').value = nvalor;
+document.getElementById('n').disabled = true; //opcional
+}
+//]]>
+</script>
 		
-	
+	-->
 </head>
 
 	<body>
@@ -89,24 +103,28 @@
 				<br>
 
 				<hr>
+				<div class="titulo">Pastebin creado el {{ reporte.fecha }}</div>
 				
 				
-				
-				<div class="form_">
+				<div  class="form_">
 						<pre>
-							<code >
+							<code  >
 							   {{ reporte.cuerpo }}
 							</code>
 						</pre>
 
-				</div>
-				
-					
-	
+				</div>  
+		
+			<button onclick="window.location.href='/'" type="submit" name="submit">Crear Pastebin</button>
+
 					
 							
 
-			
+			   <!-- footer -->
+    <footer><div class="container">
+    Pastebin creado por Gerson, con un poco de <br />
+    trauma psicomotriz cortesía de <a href="http://drmad.org" target="_blank">Oliver Etchebarne</a>.
+    </div></footer>
 
       
 			
