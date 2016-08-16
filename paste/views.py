@@ -1,10 +1,10 @@
 from django.shortcuts import render
 
-from .forms import ArticuloForm
+from .forms import ArticuloForm, Formu
 from django.http import HttpResponseRedirect
 from django.template.context_processors import csrf
 import hashlib
-from .models import reporte 
+from .models import reporte, formulario 
 
 from django.core.urlresolvers import reverse
 # Create your views here.
@@ -40,3 +40,14 @@ def mostrar(request , codigo):
     r = reporte.objects.get(codigo=codigo)
 
     return render (request,'hola.html', {'reporte': r})
+
+def registro(request):
+    frm = Formu()
+
+    args = {}
+    args.update(csrf(request))
+
+    args['frm'] = frm
+    
+    return render (request,'formulario_account.html',args)
+

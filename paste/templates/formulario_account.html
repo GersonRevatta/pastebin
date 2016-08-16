@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	div	{
+		text-align: center;
+	}
+</style>
+<body>
+
+		<div class="container form_ ">
+			<form class="" method="post">{% csrf_token %}
+				
+				<div>
+					<label>Usuario</label>
+				{{ frm.username }}	
+
+				</div>
+
+				<div>
+				<label>contareña</label>
+				{{ frm.password }}
+				</div>
+				<div>
+				<label>Email</label>
+				{{ frm.email }}
+				</div>
+
+				<div>
+				<label>nombre</label>
+				{{ frm.first_name }}
+				</div>
+
+				
+				<div>
+				<label>Apellido</label>
+				{{ frm.last_name }}
+				</div>			
+			
+		
+				<input type="submit" name="submit" value="Registro">
+			</form>
+
+		</div>
+
+</body>
+</html>
