@@ -1,10 +1,10 @@
 from django import forms
-from .models import  formulario
+from .models import  usuario
 
 
 class Formul(forms.ModelForm):
 	class Meta:
-		model = formulario
+		model = usuario
 		fields = ['username','password','email','first_name','last_name']    
 
 
