@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from paste.views import crear, registro
+from paste.views import crear
 from paste.views import mostrar
-
+#cuenta
+from usuario.views import registro
 
 #paste.views.Reporte()
 
@@ -29,7 +30,8 @@ from paste.views import mostrar
 
 urlpatterns = [
 
-    url(r'^register/$',registro),
+    url(r'^acct$',registro,name="registro"),
+    #url(r'^register/$',registro),
     url(r'^([0-9a-f]{5})$',mostrar,name="must"),
     url(r'^$',crear,name="create"),
     url(r'^admin/', admin.site.urls),
