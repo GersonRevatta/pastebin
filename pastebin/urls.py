@@ -30,6 +30,7 @@ from usuario.views import registro
 
 urlpatterns = [
 
+    #url(r'^log',logout),
     url(r'^acct$',registro,name="registro"),
     #url(r'^register/$',registro),
     url(r'^([0-9a-f]{5})$',mostrar,name="must"),

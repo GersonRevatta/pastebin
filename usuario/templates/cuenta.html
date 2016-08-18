@@ -1,0 +1,27 @@
+
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+div {
+	text-align: center;
+}
+</style>
+<body>
+
+<form method="post">{% csrf_token %}
+<div><label>Usuario</label>
+{{c.username}}
+
+</div>
+<div><label>Contraseña</label> 
+	{{ c.password }}
+</div>
+<div><button>Iniciar</button></div>
+
+</form>
+</body>
+</html>
+
+
