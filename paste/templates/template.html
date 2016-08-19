@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 	
-	<title>Pastebin</title>
+	<title>Pastebin {{ request.session.userr }}</title>
 	
 	
 	<link rel="stylesheet" href="css/animate.css">
@@ -49,7 +49,7 @@
 
 		<hr>
     	<br>
-		<h3><center> <b>Pastebin</b></center></h3>
+		<h3><center> <b>Pastebin{{ request.session.userr }}</b></center></h3>
 		<br>
 
 		<!-- content 
@@ -81,7 +81,15 @@
 	</form>
 		<!--  -->
 			<div>
-				<p></p>
+				<p>
+					
+				</p>
+				
+			</div>
+
+
+			<div>
+				
 			</div>
 
 			<footer><div class="container">

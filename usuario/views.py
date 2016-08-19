@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from .models import usuario
 from .form import Formul
+from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse
+
 from django.template.context_processors import csrf
 # Create your views here.
 from django.http import HttpResponse
@@ -9,15 +12,15 @@ def registro(request):
 	if request.POST:
 		frm = Formul(request.POST)
 		if frm.is_valid():
-			a = usuario.crear.objects.get(username,password)
-			usuario.crear(a.username,a.password)
-			usuario.save()
 			
-			return HttpResponse('Cuenta guardada')
-		else:
-			a=usuario.crear( user= request.POST['username'], password =request.POST['password'])
+			a= usuario.crear( user= request.POST['username'], password =request.POST['password'])
+			a.first_name = frm.cleaned_data['first_name']
+			a.email =frm.cleaned_data['email']
+			a.last_name =frm.cleaned_data['last_name']
 
-			return HttpResponse('¿?')
+			a.save()
+					
+			return HttpResponse('Cuenta guardada')
 	else:   
 		frm = Formul()
 
@@ -32,16 +35,35 @@ def logout(request):
 		c = Formul(request.POST)
 		if c.is_valid:
 			c  =	usuario.verificar( user= request.POST['username'], password =request.POST['password'])
+
 			if c==True:
-				return  HttpResponse('es valido')
+				
+				z = request.POST['username']		
+					#return render(request,test.html,args)
+				request.session['userr']=z	
+				
+
+				return HttpResponseRedirect(reverse('create'))
+
 			else:	
 				return  HttpResponse('intenta otra vez')
-		
+				
 	else:
 		c=Formul()
 	args = {}
 	args.update(csrf(request))
 	args['c'] = c
+
+	# try:
+	# 	request.session['contador'] += 1		
+	# except:
+	# 	request.session['contador'] = 0
+
+	# args['contador'] = request.session['contador']
+
 	return render(request,'cuenta.html',args )
+
+
+
 	
 

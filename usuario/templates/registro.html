@@ -16,27 +16,32 @@
 				<div>
 					<label>Usuario</label>
 				{{ frm.username }}	
-
+				{{ frm.username.errors }}
 				</div>
 
 				<div>
 				<label>contareña</label>
 				{{ frm.password }}
+				{{ frm.password.errors }}
 				</div>
 				<div>
 				<label>Email</label>
 				{{ frm.email }}
+				{{ frm.email.errors }}
 				</div>
 
 				<div>
 				<label>nombre</label>
 				{{ frm.first_name }}
+				{{ frm.first_name.errors }}
 				</div>
 
 				
 				<div>
 				<label>Apellido</label>
 				{{ frm.last_name }}
+				{{ frm.last_name.errors }}
+
 				</div>			
 			
 		
