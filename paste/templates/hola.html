@@ -1,6 +1,4 @@
-
-
-    {% load staticfiles %}
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,12 +101,12 @@ document.getElementById('n').disabled = true; //opcional
 				<br>
 
 				<hr>
-				<div class="titulo">Pastebin creado el {{ reporte.fecha }}</div>
+				<div class="titulo">Pastebin creado por {{ request.session.userr }} el  {{ reporte.fecha }}</div>
 				
 				
 				<div  class="form_">
 						<pre>
-							<code  >
+							<code>
 							   {{ reporte.cuerpo }}
 							</code>
 						</pre>

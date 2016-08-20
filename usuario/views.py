@@ -19,8 +19,8 @@ def registro(request):
 			a.last_name =frm.cleaned_data['last_name']
 
 			a.save()
-					
-			return HttpResponse('Cuenta guardada')
+			return HttpResponseRedirect(reverse('log'))		
+			
 	else:   
 		frm = Formul()
 
