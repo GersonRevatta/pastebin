@@ -65,5 +65,14 @@ def logout(request):
 
 
 
+def logoutt(request):
+	try:
+		del request.session['userr']
+	except KeyError:
+		pass
+
+	return HttpResponseRedirect(reverse('create'))
+
+
 	
 

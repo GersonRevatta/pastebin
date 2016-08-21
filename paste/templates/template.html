@@ -82,20 +82,43 @@
 		<!--  -->
 			<div>
 				<p>
-					
+
+				{% if request.session.userr %}
+				  Gracias por iniciar sesion Welcome  {{ request.session.userr }}
+				  <button onclick="window.location.href='/q'" type="submit" name="submit">Cerrar Sesion</button>
+
+						{% else %}
+					  		<h2> &nbsp;&nbsp;&nbsp;&nbsp; Por favor Inicie Sesion </h2>
+					  	<button onclick="window.location.href='/log'" type="submit" name="submit">Iniciar Seseion</button>
+
+				{% endif %}
+
 				</p>
 				
 			</div>
 
 
 			<div>
-				<p>Welcome {{ request.session.userr }} </p>
+
+				<!--		<h1>Botones agregados </h1>
+			<div>
+					<button onclick="window.location.href='/log'" type="submit" name="submit">Iniciar Seseion</button>
+
+				</div>
+
+	
+
+				<p>Welcome {{ request.session.userr }} </p>  -->
 			</div>
 
 			<footer><div class="container">
     Pastebin creado por Gerson, con un poco de <br />
     trauma psicomotriz cortesía de <a href="http://drmad.org" target="_blank">Oliver Etchebarne</a>.
     </div></footer>
+
+
+
+
 		
 	
 <script src="js/bootstrap.min.js"></script>
