@@ -18,7 +18,7 @@ from django.contrib import admin
 from paste.views import crear
 from paste.views import mostrar
 #cuenta
-from usuario.views import registro, logout, logoutt
+from usuario.views import registro, logout, logoutt, listar
 
 #paste.views.Reporte()
 
@@ -29,8 +29,9 @@ from usuario.views import registro, logout, logoutt
 
 
 urlpatterns = [
+    url(r'^list',listar,name="contenido"),
     url(r'^q',logoutt),
-    url(r'^log',logout),
+    url(r'^log',logout,name="loguin"),
     url(r'^acct$',registro,name="registro"),
     #url(r'^register/$',registro),
     url(r'^([0-9a-f]{5})$',mostrar,name="must"),

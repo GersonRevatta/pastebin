@@ -7,6 +7,10 @@ from django.core.urlresolvers import reverse
 from django.template.context_processors import csrf
 # Create your views here.
 from django.http import HttpResponse
+
+
+
+from paste.models import reporte
 def registro(request):
 	user=password=''
 	if request.POST:
@@ -19,7 +23,7 @@ def registro(request):
 			a.last_name =frm.cleaned_data['last_name']
 
 			a.save()
-			return HttpResponseRedirect(reverse('log'))		
+			return HttpResponseRedirect(reverse('loguin'))		
 			
 	else:   
 		frm = Formul()
@@ -74,5 +78,9 @@ def logoutt(request):
 	return HttpResponseRedirect(reverse('create'))
 
 
-	
 
+def listar(request):
+	lis = usuario.objects.get(username=request.session['userr'])
+	lts=reporte.objects.filter(usuario=lis)
+
+	return render(request,'lista.html', {'lts':lts})
