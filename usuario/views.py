@@ -92,3 +92,4 @@ def listar(request):
 	#lts=reporte.objects.filter(usuario=lis)
 	return HttpResponseRedirect(reverse('create'))
 	#return render(request,'lista.html', {'lts':lts})
+#aprender a comentar de una mera mas ordenada
