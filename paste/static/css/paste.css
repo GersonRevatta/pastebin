@@ -11,7 +11,7 @@ body{
 
 .form_  textarea{
 	margin-left: 100px;
-	width: 1200px;
+	width: 800px;
 	height: 300px;
 
 }
@@ -35,7 +35,7 @@ button {
     margin-left: 90px;
 }
 pre{margin-left: 100px;
-		width: 1200px;
+		width: 1000px;
 	height: 300px;
 
 }

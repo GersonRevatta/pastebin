@@ -6,105 +6,94 @@
 	<title>Pastebin</title>
 	<meta charset="utf-8">
 	
-	    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{% static 'css/paste.css' %}">
-	    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
-
-	    <!-- js of bootstrap -->
-	    
-	    
-	    <!-- syntax   
-	    <link rel="stylesheet" href="{% static 'css/default.css' %}">
-		<script src="{% static 'js/highlight.pack.js' %}"></script>  -->
-		<!-- para lo del la parte de syntax  solo necesitava esto -->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="{% static 'css/paste.css' %}"> 
+		<link rel="stylesheet" href="{% static 'css/animate.css' %}">
 
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-
-    <!-- <script type="text/javascript">
-//<![CDATA[
-function numerar(){
-var nvalor="";
-var contenido = document.getElementById('textA').value;
-var lineas = contenido.split('\n');
- 
-for(var i = 0;i < lineas.length;i++){
-nvalor  += (i+1) + ' ' +lineas[i] + '\n';
-}
-document.getElementById('textA').value = nvalor;
-document.getElementById('n').disabled = true; //opcional
-}
-//]]>
-</script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+	
+	<script>hljs.initHighlightingOnLoad();</script>
+<style type="text/css">  
+	div  {
+		margin-left: -89px;
 		
-	-->
+
+/*
+	margin-left: -80px;
+	width: 800px;
+	height: 300px;
+	margin-right: 1400px;
+*/
+}
+
+</style>
+  
 </head>
 
 	<body>
 		<!-- barra de navegacion -->
 		<div class="">
-        
-           <header>
-           <nav class="navbar navbar-default navbar-fixed-top  ">
-               <div class="container-fluid">
-                   <div class="navbar-header">
-                       <button type="button" class="navbar-toggle collapsed" data-toggle="collapsed" data-target='#navbar-1'>
-                           <span class='sr-only' >menu</span>
-                           <span class='icon-bar' ></span>
-                           <span class='icon-bar' ></span>
-                           <span class='icon-bar' ></span>    
-                       </button>
-                       <a href="#" class="navbar-brand"><img  id="icon_nav" src="img/icono.jpg" alt=""> <p class="icono_p"><b>Pastebin</b></p> </a>
-                   </div>
-                   <div class="collapse navbar-collapse" id="navbar-1">
-                       <ul class="nav navbar-nav navbar-right">
-                           <!-- 1er menu -->
-                           <li >
-                           	 	<a class="btn" > <span > </span>&nbsp;Inicio
-                           	 	</a>
-                            
-                           </li> 
-                           <!-- 2er menu -->
-                           <li >
-                           		<a  class="btn" onclick="window.location.href='/'"> 
-                            	Create new Pastebin <span></span>
-                            	</a>
-                            </li>
-                          
-                       </ul>
-                   </div>
-               </div>
-           </nav>
-         </header>
-        </div>
+		
+		   <header>
+		   <nav class="navbar navbar-default navbar-fixed-top  ">
 
-<!--
-
-<form action="/" method="post">{% csrf_token %}
-				
-				
-
-				<input type="submit" name="submit" value="Create new articulo">
-				</form>
-				<button onclick="window.location.href='/'">askjfgj</button>
-<div class="container  ">
-			<div class=" col-md-6" >
-				<h3>hola</h3>
-			</div>
-
-
-		-->				<hr>
-		    	<br>
+			   <div class="container-fluid">
+				   <div class="navbar-header">
+					   <button type="button" class="navbar-toggle collapsed" data-toggle="collapsed" data-target='#navbar-1'>
+						   <span class='sr-only' >menu</span>
+						   <span class='icon-bar' ></span>
+						   <span class='icon-bar' ></span>
+						   <span class='icon-bar' ></span>    
+					   </button>
+					   <a href="#" class="navbar-brand"><img  id="icon_nav" src="img/icono.jpg" alt=""> <p class="icono_p"><b>Pastebin</b></p> </a>
+				   </div>
+				   <div class="collapse navbar-collapse" id="navbar-1">
+					   <ul class="nav navbar-nav navbar-right">
+						   <!-- 1er menu -->
+						   {% if request.session.userr %}
+						   <li >
+						   		<button onclick="window.location.href='/q'" type="submit" name="submit">Cerrar Sesion</button>
+								
+						   </li> 
+						   <li>
+						   		<button onclick="window.location.href='/list'" type="submit" name="submit">Listar</button>
+						   </li>
+						   {% else %}
+						   <li >
+						   		<button onclick="window.location.href='/log'" type="submit" name="submit">Iniciar Sesion</button>
+						   		
+						   </li>
+						   {% endif%}
+						   <!-- 2er menu -->
+						   <li >
+								<a  class="btn" onclick="window.location.href='/'"> 
+								Create new Pastebin <span></span>
+								</a>
+							</li>
+						  
+					   </ul>
+				   </div>
+			   </div>
+		   </nav>
+		 </header>
+		</div>
+			<hr>
+				<br>
 				<h3><center> <b>Pastebin</b></center></h3>
 				<br>
 
-				<hr>
-				<div class="titulo">Pastebin creado por {{ request.session.userr }} el  {{ reporte.fecha }}</div>
+				
+				{% if request.session.userr %}
+
+				<div  class="titulo"> <b>Pastebin creado por {{ request.session.userr }} el  {{ reporte.fecha }}</b></div>
+				{% else %}
+				<div class='titulo'> Pastebin Anonimo -> creado el {{ reporte.fecha }}</div>
+				{% endif %}
 				
 				
-				<div  class="form_">
+				<div class="form_">
 						<pre>
 							<code>
 							   {{ reporte.cuerpo }}
@@ -120,26 +109,29 @@ document.getElementById('n').disabled = true; //opcional
 				<button onclick="window.location.href='/q'" type="submit" name="submit">Cerrar Sesion</button>
 			</div>		
 		-->
-				{% if request.session.userr %}
+				<!--{% if request.session.userr %}
 				  Gracias por iniciar sesion Welcome  {{ request.session.userr }}
 				  <button onclick="window.location.href='/q'" type="submit" name="submit">Cerrar Sesion</button>
 
 						{% else %}
-					  		<h2> &nbsp;&nbsp;&nbsp;&nbsp; Por favor Inicie Sesion </h2>
-					  	<button onclick="window.location.href='/log'" type="submit" name="submit">Iniciar Seseion</button>
+							<h2> &nbsp;&nbsp;&nbsp;&nbsp; Por favor Inicie Sesion </h2>
+						<button onclick="window.location.href='/log'" type="submit" name="submit">Iniciar Seseion</button>
 
 				{% endif %}			
 
-			   <!-- footer -->
-    <footer><div class="container">
-    Pastebin creado por Gerson, con un poco de <br />
-    trauma psicomotriz cortesía de <a href="http://drmad.org" target="_blank">Oliver Etchebarne</a>.
-    </div></footer>
+				-->
 
-      
+			   <!-- footer -->
+	<footer><div class="container">
+	Pastebin creado por Gerson, con un poco de <br />
+	trauma psicomotriz cortesía de <a href="http://drmad.org" target="_blank">Oliver Etchebarne</a>.
+	</div></footer>
+
+	  
 			
 <!-- js of bootstrap -->
-	    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/go.min.js"></script>
+		<script src="{% static 'js/bootstrap.min.js' %}"></script>
 </body>
 </html>
 			

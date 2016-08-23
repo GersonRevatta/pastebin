@@ -2,7 +2,12 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 </head>
+	
+
+
 <style type="text/css">
 	div	{
 		text-align: center;
@@ -10,8 +15,52 @@
 	h3{
 		text-align: center;
 	}
+	button {
+    background: red;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    color: white;
+    margin-left: 29px;
+    margin-top: 10px;
+    margin-left: 90px;
+}
 </style>
 <body>
+
+
+
+		<!--  nav-->
+			 <header>
+		   <nav class="navbar navbar-default navbar-fixed-top  ">
+			   <div class="container-fluid">
+				   <div class="navbar-header">
+					   <button type="button" class="navbar-toggle collapsed" data-toggle="collapsed" data-target='#navbar-1'>
+						   <span class='sr-only' >menu</span>
+						   <span class='icon-bar' ></span>
+						   <span class='icon-bar' ></span>
+						   <span class='icon-bar' ></span>    
+					   </button>
+					   <a href="#" class="navbar-brand"><img  id="icon_nav" src="img/icono.jpg" alt=""> <p class="icono_p"><b>Pastebin</b></p> </a>
+				   </div>
+				   <div class="collapse navbar-collapse" id="navbar-1">
+					   <ul class="nav navbar-nav navbar-right">
+						  						   <!-- 2er menu -->
+						   <li >
+								<a  class="btn" onclick="window.location.href='/'"> 
+								Create new Pastebin <span></span>
+								</a>
+							</li>
+						  
+					   </ul>
+				   </div>
+			   </div>
+		   </nav>
+		 </header>
+		<!--  -->
+		<br>
+		<br>
 		<h3>Registro de Usuarios</h3>
 		<div class="container form_ ">
 			<form  method="post" >{% csrf_token %}

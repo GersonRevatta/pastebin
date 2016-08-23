@@ -31,26 +31,31 @@
                        <a href="#" class="navbar-brand"><p class="icono_p"><b>Pastebin</b></p> </a>
                    </div>
                    <div class="" id="navbar-1">
-                       <ul class="nav navbar-nav navbar-right">
-                           <!-- 1er menu -->
-                           <li >
-                           	 	
-                            	<a onclick="window.location.href='/log'" type="button" class="navbar-brand"><p class=""><b>Iniciar Sesion</b></p> </a>
-                            	
-
-                           </li> 
-                           <li >
-                           	 	
-                            	<a onclick="window.location.href='/acct'" type="button" class="navbar-brand"><p class=""><b>Registrarse</b></p> </a>
-                            	
-
-                           </li>
-                           <li>
-                           	<button onclick="window.location.href='/log'" type="submit" name="submit">Iniciar Seseion</button>
-                           </li>
-                          
-                          
-                       </ul>
+                   		<ul class="nav navbar-nav navbar-right">
+						   <!-- 1er menu -->
+						   {% if request.session.userr %}
+						   <li >
+						   		<button onclick="window.location.href='/q'" type="submit" name="submit">Cerrar Sesion</button>
+								
+						   </li>
+						   <li>
+						   		 <button onclick="window.location.href='/list'" type="submit" name="submit">Listar</button>
+						   </li> 
+						   {% else %}
+						   <li >
+						   		<button onclick="window.location.href='/log'" type="submit" name="submit">Iniciar Sesion</button>
+						   		
+						   </li>
+						   {% endif%}
+						   <!-- 2er menu -->
+						   <li >
+								<a  class="btn" onclick="window.location.href='/'"> 
+								Create new Pastebin <span></span>
+								</a>
+							</li>
+						  
+					   </ul>
+                       
                    </div>
                </div>
            </nav>
@@ -92,6 +97,7 @@
 		<button type="submit" name="submit">Crear Pastebin</button>
 	</form>
 		<!--  -->
+		<!--
 			<div>
 				<p>
 
@@ -112,6 +118,7 @@
 				
 			</div>
 
+-->
 
 			<div>
 
@@ -135,7 +142,7 @@
 
 
 		
-	
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/go.min.js"></script>	
 <script src="js/bootstrap.min.js"></script>
 </body>
 </html>

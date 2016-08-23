@@ -80,7 +80,15 @@ def logoutt(request):
 
 
 def listar(request):
-	lis = usuario.objects.get(username=request.session['userr'])
-	lts=reporte.objects.filter(usuario=lis)
-
-	return render(request,'lista.html', {'lts':lts})
+	try:
+		lis = usuario.objects.get(username=request.session['userr'])
+		lts=reporte.objects.filter(usuario=lis)
+		return render(request,'lista.html', {'lts':lts})
+		
+	except :
+		pass
+	
+	#lis = usuario.objects.get(username=request.session['userr'])
+	#lts=reporte.objects.filter(usuario=lis)
+	return HttpResponseRedirect(reverse('create'))
+	#return render(request,'lista.html', {'lts':lts})
