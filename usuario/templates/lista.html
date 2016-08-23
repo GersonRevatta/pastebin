@@ -1,6 +1,45 @@
-{{ lts.count }}
+
+
+<html>
+<head>
+	<title></title>
+<style type="text/css">
+
+h2{
+	text-align: center;
+}
+h4, h3, a {
+	margin-left: 20px;
+	text-align: center;
+}
+
+</style>	
+</head>
+<body>
+
+<h2>Codigo de Pastebin creado</h2>
+
+<br>
+<!--{{ lts.count }}
 {% for i in lts %}
 yay
 	{{ i.fecha }}
 	{{ i.cuerpo }}
+	{{ i.codigo }}
 {% endfor %}
+
+-->
+{% for i in lts %}
+	
+	<h4>Pastebin creado </h4>
+	
+	<h3><b> {{ i.fecha }}</b></h3>
+	
+	<h3>  <a href="http://localhost:8000/{{ i.codigo }}">	File </a> </h3>
+	<br>
+	<br>
+{% endfor %}	
+<br>
+<h5> By  {{ request.session.userr }} </h5>
+</body>
+</html>

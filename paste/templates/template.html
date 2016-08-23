@@ -28,16 +28,26 @@
                            <span class='icon-bar' ></span>
                            <span class='icon-bar' ></span>    
                        </button>
-                       <a href="#" class="navbar-brand"><img  id="icon_nav" src="img/icono.jpg" alt=""> <p class="icono_p"><b>Pastebin</b></p> </a>
+                       <a href="#" class="navbar-brand"><p class="icono_p"><b>Pastebin</b></p> </a>
                    </div>
-                   <div class="collapse navbar-collapse" id="navbar-1">
+                   <div class="" id="navbar-1">
                        <ul class="nav navbar-nav navbar-right">
                            <!-- 1er menu -->
                            <li >
-                           	 	<a > <span > </span>&nbsp;Inicio
-                           	 	</a>
-                            
+                           	 	
+                            	<a onclick="window.location.href='/log'" type="button" class="navbar-brand"><p class=""><b>Iniciar Sesion</b></p> </a>
+                            	
+
                            </li> 
+                           <li >
+                           	 	
+                            	<a onclick="window.location.href='/acct'" type="button" class="navbar-brand"><p class=""><b>Registrarse</b></p> </a>
+                            	
+
+                           </li>
+                           <li>
+                           	<button onclick="window.location.href='/log'" type="submit" name="submit">Iniciar Seseion</button>
+                           </li>
                           
                           
                        </ul>
@@ -49,7 +59,9 @@
 
 		<hr>
     	<br>
-		<h3><center> <b>Pastebin {{ request.session.userr }} </b></center></h3>
+
+
+		<h3><center> <b>Bienvenido {{ request.session.userr }} a Pastebin  </b></center></h3>
 		<br>
 
 		<!-- content 
@@ -86,9 +98,12 @@
 				{% if request.session.userr %}
 				  Gracias por iniciar sesion Welcome  {{ request.session.userr }}
 				  <button onclick="window.location.href='/q'" type="submit" name="submit">Cerrar Sesion</button>
+				  <br>
+				  <button onclick="window.location.href='/list'" type="submit" name="submit">Listar</button>
+
 
 						{% else %}
-					  		<h2> &nbsp;&nbsp;&nbsp;&nbsp; Por favor Inicie Sesion </h2>
+					  		<h5> &nbsp;&nbsp;&nbsp;&nbsp; Inicie sesion para mas funcionalidades </h5>
 					  	<button onclick="window.location.href='/log'" type="submit" name="submit">Iniciar Seseion</button>
 
 				{% endif %}
