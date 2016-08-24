@@ -4,11 +4,12 @@
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 <style type="text/css">
+div #re_{
 
-h2{
-	text-align: center;
+	
 }
-h4, h3, a {
+
+ h3  {
 	margin-left: 20px;
 	text-align: center;
 }
@@ -23,11 +24,7 @@ button {
     margin-top: 10px;
     margin-left: 90px;
 }
-.table_ {
-	margin-left: 500px;
-	text-align: center;
 
-}
 body{
 
 rgba(226,226,226,1)), color-stop(50%, rgba(219,219,219,0.83)), color-stop(51%, rgba(209,209,209,0.83)), color-stop(100%, rgba(254,254,254,0.66)));
@@ -76,22 +73,32 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
 <h2>Codigo de Pastebin creado</h2>
 
 <br>
-
+<div id="re_" >
+	<div id="" class="panel panel-warning" >
+		<div class="panel-heading" >Registros de Pastebin </div>
 {% for i in lts %}
-	<h3>	<b></b></h3>
-	<table class="table_">
-		<tr>
-			<td><b>Fecha</b></td>
-			<td><h6><b> {{ i.fecha }}</b></h6></td>
-		</tr>
-		<tr>
-			<td><b>Enlaze de descarga</b></td>
-			<td> <h6>  <a href="http://localhost:8000/{{ i.codigo }}">	File </a> </h6> </td>
-		</tr>
-	</table>
+	<h3>	<b></b></h3>	
+		<table class="table">
+
+			<tr>
+				<td>
+					<td><b>Fecha</b></td>
+					<td><b> {{ i.fecha }}</b></td>
+				</td>
+				<td>
+					<td><b>Enlace de descarga</b></td>
+					<td><b><a href="http://localhost:8000/{{ i.codigo }}">	File </a></b> </td>
+
+				</td>
+					
+			</tr>
+		</table>
 	
 	<br>
-{% endfor %}	
+{% endfor %}
+</div>
+
+</div>	
 <br>
 <h5> By  {{ request.session.userr }} </h5>
 </body>
