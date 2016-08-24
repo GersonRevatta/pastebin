@@ -16,7 +16,9 @@
 	
 	<script>hljs.initHighlightingOnLoad();</script>
 <style type="text/css">  
-	div  {
+	div .titulo {
+
+		
 		/*margin-left: -89px; */
 		
 
@@ -87,15 +89,14 @@
 				
 				{% if request.session.userr %}
 
-				<div  class="titulo"> <b>Pastebin creado por {{ request.session.userr }} el  {{ reporte.fecha }}</b></div>
+				<div  class="titulo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Autor : {{ request.session.userr }} - Creado el   {{ reporte.fecha }}</b></div>
 				{% else %}
-				<div class='titulo'> Pastebin Anonimo -> creado el {{ reporte.fecha }}</div>
+				<div class='titulo'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pastebin Anonimo -> creado el {{ reporte.fecha }}</div>
 				{% endif %}
 				
 				
 				<div class="form_">
-						<pre>
-							<code>
+						<pre><code >
 							   {{ reporte.cuerpo }}
 							</code>
 						</pre>

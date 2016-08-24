@@ -4,7 +4,14 @@ h3 , h4 {
 
 
 body{
-	background: peru
+
+rgba(226,226,226,1)), color-stop(50%, rgba(219,219,219,0.83)), color-stop(51%, rgba(209,209,209,0.83)), color-stop(100%, rgba(254,254,254,0.66)));
+background: -webkit-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,0.83) 50%, rgba(209,209,209,0.83) 51%, rgba(254,254,254,0.66) 100%);
+background: -o-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,0.83) 50%, rgba(209,209,209,0.83) 51%, rgba(254,254,254,0.66) 100%);
+background: -ms-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,0.83) 50%, rgba(209,209,209,0.83) 51%, rgba(254,254,254,0.66) 100%);
+background: linear-gradient(to right, rgba(226,226,226,1) 0%, rgba(219,219,219,0.83) 50%, rgba(209,209,209,0.83) 51%, rgba(254,254,254,0.66) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=1 );
+	
 }
 
 
@@ -14,11 +21,11 @@ body{
 
 footer {
     text-align: right;
-    color: #DDD;
+    color: blue;
     font-size: 12px;
 }
 footer a { 
-    color: #CCC;
+    color: red;
 }
 button {
     background: red;
