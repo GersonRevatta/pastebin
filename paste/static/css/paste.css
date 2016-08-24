@@ -9,12 +9,9 @@ body{
 
 
 
-.form_  textarea{
-	margin-left: 100px;
-	width: 800px;
-	height: 300px;
 
-}
+
+
 footer {
     text-align: right;
     color: #DDD;
@@ -34,8 +31,78 @@ button {
     margin-top: 10px;
     margin-left: 90px;
 }
-pre{margin-left: 100px;
-		width: 1000px;
+/*pre{
+    margin-left: 100px;
+		width: 1200px;
 	height: 300px;
+     
+
+}
+*/
+/* 
+   .form_  textarea{
+    margin-left: 100px;
+    width: 1200px;
+    height: 300px; 
+}
+ */ 
+@media (min-width: 480px){
+    pre {
+    margin-left: 70px;
+        width: 350px;
+    height: 300px;
+     
+
+    }
+    #crear_paste{
+        text-align: center;
+    }
+    footer{
+        display: block;
+    }
+
+
+    .form_  textarea{
+    margin-left: 60px;
+    width: 400px;
+    height: 300px; 
+
+  
+}
+
+
+@media (min-width: 768px){
+    
+ pre {
+    margin-left: 70px;
+        width:650px;
+    height: 300px;
+     
+
+    }
+    #crear_paste{
+        text-align: center;
+    }
+    .form_  textarea{
+    margin-left: 50px;
+    width: 700px;
+    height: 300px; 
+
+}
+
+@media (min-width: 1200px){
+
+     pre {
+    margin-left: 100px;
+        width: 1110px;
+    height: 300px;
+     
+
+    }
+    .form_  textarea{
+    margin-left: 60px;
+    width: 1200px;
+    height: 300px; 
+
 
 }

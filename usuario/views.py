@@ -50,7 +50,9 @@ def logout(request):
 				return HttpResponseRedirect(reverse('create'))
 
 			else:	
-				return  HttpResponse('intenta otra vez')
+				
+
+				return  HttpResponseRedirect(reverse('loguin'))
 				
 	else:
 		c=Formul()
