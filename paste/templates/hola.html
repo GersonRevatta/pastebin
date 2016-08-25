@@ -28,6 +28,15 @@
 	height: 300px;
 	margin-right: 1400px;
 */
+/*  ljs*/
+
+}
+.inicio{
+	margin-right: -70px;
+}
+
+.cerrar{
+	margin-right: -75px;
 }
 
 </style>
@@ -56,16 +65,15 @@
 						   <!-- 1er menu -->
 						   {% if request.session.userr %}
 						   <li >
-						   		<button onclick="window.location.href='/q'" type="submit" name="submit">Cerrar Sesion</button>
-								
-						   </li> 
-						   <li>
+						   		<button class="cerrar" onclick="window.location.href='/q'" type="submit" name="submit">Cerrar Sesion</button>
+							
 						   		<button onclick="window.location.href='/list'" type="submit" name="submit">Listar</button>
 						   </li>
 						   {% else %}
 						   <li >
-						   		<button onclick="window.location.href='/log'" type="submit" name="submit">Iniciar Sesion</button>
+						   		<button  onclick="window.location.href='/log'"  class="inicio" type="submit" name="submit">Iniciar Sesion</button>
 						   		
+						   		<button onclick="window.location.href='/acct'" type="submit" name="submit"> Registrarse </button>
 						   </li>
 						   {% endif%}
 						   <!-- 2er menu -->
@@ -93,16 +101,18 @@
 				{% else %}
 				<div class='titulo'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pastebin Anonimo -> creado el {{ reporte.fecha }}</div>
 				{% endif %}
-				
-				
-				<div class="form_">
-						<pre><code >
+						<pre>
+							<code >
 							   {{ reporte.cuerpo }}
 							</code>
 						</pre>
 
-				</div>  
-		
+				  
+			<style type="text/css">
+			.hljs-meta{
+	margin-left: -469px;
+}
+			</style>
 			<button id="crear_paste" onclick="window.location.href='/'" type="submit" name="submit">Crear Pastebin</button>
 		<!--
 			<div>

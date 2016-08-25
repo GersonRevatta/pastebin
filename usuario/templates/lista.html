@@ -34,6 +34,9 @@ background: -ms-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,0
 background: linear-gradient(to right, rgba(226,226,226,1) 0%, rgba(219,219,219,0.83) 50%, rgba(209,209,209,0.83) 51%, rgba(254,254,254,0.66) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=1 );
 }
+.panel{
+	margin: 90px;
+}
 
 
 </style>	
@@ -68,30 +71,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
 		 </header>
 		<!--  -->
 
-<br>
-<br>
-<h2>Codigo de Pastebin creado</h2>
 
 <br>
 <div id="re_" >
 	<div id="" class="panel panel-warning" >
 		<div class="panel-heading" >Registros de Pastebin </div>
 {% for i in lts %}
-	<h3>	<b></b></h3>	
-		<table class="table">
+	<table class="table">
 
 			<tr>
 				<td>
 					<td><b>Fecha</b></td>
-					<td><b> {{ i.fecha }}</b></td>
-				</td>
-				<td>
+					<td><b>{{ i.fecha }}</b></td>
 					<td><b>Enlace de descarga</b></td>
-					<td><b><a href="http://localhost:8000/{{ i.codigo }}">	File </a></b> </td>
+					<td><b><a href="http://localhost:8000/{{ i.codigo }}">File</a></b> </td>
 
 				</td>
 					
 			</tr>
+
+
 		</table>
 	
 	<br>

@@ -26,6 +26,17 @@
     margin-top: 10px;
     margin-left: 90px;
 }
+
+
+body{
+
+rgba(226,226,226,1)), color-stop(50%, rgba(219,219,219,0.83)), color-stop(51%, rgba(209,209,209,0.83)), color-stop(100%, rgba(254,254,254,0.66)));
+background: -webkit-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,0.83) 50%, rgba(209,209,209,0.83) 51%, rgba(254,254,254,0.66) 100%);
+background: -o-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,0.83) 50%, rgba(209,209,209,0.83) 51%, rgba(254,254,254,0.66) 100%);
+background: -ms-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,0.83) 50%, rgba(209,209,209,0.83) 51%, rgba(254,254,254,0.66) 100%);
+background: linear-gradient(to right, rgba(226,226,226,1) 0%, rgba(219,219,219,0.83) 50%, rgba(209,209,209,0.83) 51%, rgba(254,254,254,0.66) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=1 );
+}
 </style>
 <body>
 
@@ -47,7 +58,12 @@
 				   <div class="collapse navbar-collapse" id="navbar-1">
 					   <ul class="nav navbar-nav navbar-right">
 						  						   <!-- 2er menu -->
-						   <li >
+
+						  <li>
+						  	<button  onclick="window.location.href='/log'"  class="inicio"type="submit" name="submit">Iniciar Sesion</button>
+						   		
+						  </li>
+						   <li>
 								<a  class="btn" onclick="window.location.href='/'"> 
 								Create new Pastebin <span></span>
 								</a>
