@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+
+		<title>Pastebin</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	
 </head>
 	
 
@@ -12,6 +16,8 @@
 	div	{
 		text-align: center;
 	}
+
+
 	h3{
 		text-align: center;
 	}
@@ -40,83 +46,93 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
 </style>
 <body>
 
+		<header>
+		          <nav class="navbar navbar-default navbar-static-top">
+		          <div class="container">
+		            <div class="navbar-header">
+		              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		                <span class="sr-only">Toggle navigation</span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		              </button>
+		              <a class="navbar-brand" href="#">Pastebin</a>
+		            </div>
+		            <div id="navbar" class="navbar-collapse collapse">
+		              <ul class="nav navbar-nav navbar-right">
+								  
+								  
+								   <li >
+								   		<a onclick="window.location.href='/log'" href="">
+								   			Iniciar Sesion
+								   		</a>
+								   
+								   </li>
+								   
+								   
+								  
+								   <li >
+										<a  class="btn" onclick="window.location.href='/'"> 
+										Create new Pastebin <span></span>
+										</a>
+									</li>
+								  
+							   </ul>
+		            </div>
+		          </div>
+		        </nav>    
+         </header>
 
-
-		<!--  nav-->
-			 <header>
-		   <nav class="navbar navbar-default navbar-fixed-top  ">
-			   <div class="container-fluid">
-				   <div class="navbar-header">
-					   <button type="button" class="navbar-toggle collapsed" data-toggle="collapsed" data-target='#navbar-1'>
-						   <span class='sr-only' >menu</span>
-						   <span class='icon-bar' ></span>
-						   <span class='icon-bar' ></span>
-						   <span class='icon-bar' ></span>    
-					   </button>
-					   <a href="#" class="navbar-brand"><img  id="icon_nav" src="img/icono.jpg" alt=""> <p class="icono_p"><b>Pastebin</b></p> </a>
-				   </div>
-				   <div class="collapse navbar-collapse" id="navbar-1">
-					   <ul class="nav navbar-nav navbar-right">
-						  						   <!-- 2er menu -->
-
-						  <li>
-						  	<button  onclick="window.location.href='/log'"  class="inicio"type="submit" name="submit">Iniciar Sesion</button>
-						   		
-						  </li>
-						   <li>
-								<a  class="btn" onclick="window.location.href='/'"> 
-								Create new Pastebin <span></span>
-								</a>
-							</li>
-						  
-					   </ul>
-				   </div>
-			   </div>
-		   </nav>
-		 </header>
-		<!--  -->
-		<br>
+		
+	
 		<br>
 		<h3>Registro de Usuarios</h3>
 		<div class="container form_ ">
 			<form  method="post" >{% csrf_token %}
 				
-				<div>
-					<label>Usuario</label>
-				{{ frm.username }}	
-				{{ frm.username.errors }}
-				</div>
-
-				<div>
-				<label>contareña</label>
-				{{ frm.password }}
-				{{ frm.password.errors }}
-				</div>
-				<div>
-				<label>Email</label>
-				{{ frm.email }}
-				{{ frm.email.errors }}
-				</div>
-
-				<div>
-				<label>nombre</label>
-				{{ frm.first_name }}
-				{{ frm.first_name.errors }}
-				</div>
-
-				
-				<div>
-				<label>Apellido</label>
-				{{ frm.last_name }}
-				{{ frm.last_name.errors }}
-
-				</div>			
+				<center>
 			
+				<table>
+					<tr>
+						<td>Usuario</td>
+						<td>{{ frm.username }}	
+							{{ frm.username.errors }}
+						</td>
+					</tr>
+					<tr>
+						<td>Contraseña</td>
+						<td>{{ frm.password }}
+				{{ frm.password.errors }}</td>
+					</tr>
+					<tr>
+						<td>Email@</td>
+						<td>
+						{{ frm.email }}
+						{{ frm.email.errors }}
+						</td>
+					</tr>
+					<tr>
+						<td>Nombre</td>
+						<td>
+							{{ frm.first_name }}
+				{{ frm.first_name.errors }}
+						</td>
+					</tr>
+					<tr>
+						<td>Apellido</td>
+						<td>{{ frm.last_name }}
+							{{ frm.last_name.errors }}
+						</td>
+					</tr>
+				</table>
+				</center>	
 		
 				<input type="submit" name="submit" value="Registro">
 			</form>
 
 		</div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>	
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -21,7 +21,7 @@
 	}
 
 	.cerrar{
-		margin-right: -75px;
+		margin-right: 0px;
 	}
 
 	
@@ -32,128 +32,69 @@
 		<div class="">
         
            <header>
-        
-           <!--
+		          <nav class="navbar navbar-default navbar-static-top">
+		          <div class="container">
+		            <div class="navbar-header">
+		              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		                <span class="sr-only">Toggle navigation</span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		              </button>
+		              <a class="navbar-brand" href="#">Pastebin</a>
+		            </div>
+		            <div id="navbar" class="navbar-collapse collapse">
+		              <ul class="nav navbar-nav navbar-right">
+								  
+								   {% if request.session.userr %}
+								   <li >
+								   		<a  class="btn" onclick="window.location.href='/q'" href="">Cerrar Sesion</a>
+								   		<!--
+								   		<button class="cerrar" onclick="window.location.href='/q'" type="submit" name="submit">Cerrar Sesion</button>
+								   		-->
+									</li>
 
-           <nav class="navbar navbar-default navbar-fixed-top  ">
-               <div class="container-fluid">
-                   <div class="navbar-header">
-                   		<button type="button" class="navbar-toggle collapsed" data-toggle="collapsed" data-target='#navbar' aria-expanded="false" aria.controls="navbar">
-						   <span class='sr-only' >menu</span>
-						   <span class='icon-bar' ></span>
-						   <span class='icon-bar' ></span>
-						   <span class='icon-bar' ></span>    
-					   </button>
-                       <a href="#" class="navbar-brand"><p class="icono_p"><b>Pastebin</b></p> </a>
-                   </div>
-                   <div class="collapse navbar-collapse" id="navbar-1">
-                   		<ul class="nav navbar-nav navbar-right">
-						   <!-- 1er menu 
-						   {% if request.session.userr %}
-						   <li >
-						   		<button class="cerrar" onclick="window.location.href='/q'" type="submit" name="submit">Cerrar Sesion</button>
-							
-						   		 <button onclick="window.location.href='/list'" type="submit" name="submit">Listar</button>
-						   </li> 
-						   {% else %}
-						   <li >
-						   		<button class="inicio" onclick="window.location.href='/log'" type="submit" name="submit">Iniciar Sesion</button>
-						   
-						   		<button onclick="window.location.href='/acct'" type="submit" name="submit"> Registrarse </button>
-						   </li>
-						   {% endif%}
-						   <!-- 2er menu 
-						   <li >
-								<a  class="btn" onclick="window.location.href='/'"> 
-								Create new Pastebin <span></span>
-								</a>
-							</li>
-						  
-					   </ul>
-                       
-                   </div>
-               </div>
-           </nav>
+									<li>
+								   		 <!--<a class="btn" onclick="window.location.href='/list'" href="">Listar</a> -->
 
-           -->
-           
-           <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Pastebin</a>
-        </div>
-        
-
-          <div class="collapse navbar-collapse" id="navbar-1">
-                   		<ul class="nav navbar-nav navbar-right">
-						   <!-- 1er menu -->
-						   {% if request.session.userr %}
-						   <li >
-						   		<button class="cerrar" onclick="window.location.href='/q'" type="submit" name="submit">Cerrar Sesion</button>
-							
-						   		 <button onclick="window.location.href='/list'" type="submit" name="submit">Listar</button>
-						   </li> 
-						   {% else %}
-						   <li >
-						   		<button class="inicio" onclick="window.location.href='/log'" type="submit" name="submit">Iniciar Sesion</button>
-						   
-						   		<button onclick="window.location.href='/acct'" type="submit" name="submit"> Registrarse </button>
-						   </li>
-						   {% endif%}
-						   <!-- 2er menu -->
-						   <li >
-								<a  class="btn" onclick="window.location.href='/'"> 
-								Create new Pastebin <span></span>
-								</a>
-							</li>
-						  
-					   </ul>
-                       
-                   </div>
-                   <!--  
-          {% if request.session.userr %}
-          				<ul>
-						   <li >
-						   		<button class="cerrar" onclick="window.location.href='/q'" type="submit" name="submit">Cerrar Sesion</button>
-							
-						   		 <button onclick="window.location.href='/list'" type="submit" name="submit">Listar</button>
-						   </li> 
-						   {% else %}
-						   <li >
-						   		<button class="inicio" onclick="window.location.href='/log'" type="submit" name="submit">Iniciar Sesion</button>
-						   
-						   		<button onclick="window.location.href='/acct'" type="submit" name="submit"> Registrarse </button>
-						   </li>
-						   {% endif%}
-						  </ul>
-						  -->
- 
-          <!--
-            
-
-
-
-
-
-
-            -->
-       
-        </div>
-      
-    </nav> 
+								   		 
+								   		 <a  class="btn" onclick="window.location.href='/list'" type="submit" name="submit">Listar</a>
+								   		
+								   		
+								   </li> 
+								   {% else %}
+								   <li >
+								   		<a onclick="window.location.href='/log'" href="">
+								   			Iniciar Sesion
+								   		</a>
+								   	<!--	
+								   		<button class="inicio" onclick="window.location.href='/log'" type="submit" name="submit">Iniciar Sesion</button>
+								   	-->
+								   </li>
+								   <li>
+								   	<a class="btn" onclick="window.location.href='/acct'" href="" >
+								   		Registrarse
+								   	</a>
+								   	<!--
+								   	<button onclick="window.location.href='/acct'" type="submit" name="submit"> Registrarse </button>
+								   	-->
+								   </li>
+								   {% endif%}
+								  
+								   <li >
+										<a  class="btn" onclick="window.location.href='/'"> 
+										Create new Pastebin <span></span>
+										</a>
+									</li>
+								  
+							   </ul>
+		            </div>
+		          </div>
+		        </nav>    
          </header>
         </div>
 
-		<hr>
-    	<br>
-
-
+    	
 		<h3><center> <b>Bienvenido {{ request.session.userr }} a Pastebin  </b></center></h3>
 		<br>
 
