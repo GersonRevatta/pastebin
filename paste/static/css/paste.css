@@ -14,9 +14,34 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
 	
 }
 
+.form_  textarea{
+    display: block;
+    width: 90%;
+    height: 300px; 
+   /* margin: 0px auto; */
+}
 
 
+.conta_{
+    margin: 0px auto;
+    width: 90%;
+}
+.conta_ button{
+    width:15%;
+    color: blue;
+}
 
+/*style de hola.html*/
+.cont_{
+    margin: 0px auto;
+    width: 90%;
+}
+pre{
+    display: block;
+    width: 90%;
+    height: 300px; 
+
+}
 
 
 footer {
@@ -34,9 +59,8 @@ button {
     border: none;
     font-weight: bold;
     color: white;
-    margin-left: 29px;
+  
     margin-top: 10px;
-    margin-left: 90px;
 }
 /*pre{
     margin-left: 100px;
@@ -46,6 +70,8 @@ button {
 
 }
 */
+
+
 /* 
    .form_  textarea{
     margin-left: 100px;
@@ -53,63 +79,60 @@ button {
     height: 300px; 
 }
  */ 
-@media (min-width: 480px){
-    pre {
-    margin-left: 70px;
-        width: 350px;
-    height: 300px;
-     
+@media (max-width:  284px){
+   
 
+    .conta_ button{
+        width: 90%;
+        
+        
     }
-    #crear_paste{
-        text-align: center;
-    }
+
+}
+
+@media (max-width:  480px){
+   
+   
+
     footer{
         display: block;
     }
+    
+.conta_ button{
+        width: 90%;
+        
+        
+    }
 
 
-    .form_  textarea{
-    margin-left: 60px;
+/*    .form_  textarea{
     width: 400px;
     height: 300px; 
 
   
 }
-
-
-@media (min-width: 768px){
-    
- pre {
-    margin-left: 70px;
-        width:650px;
-    height: 300px;
-     
-
-    }
-    #crear_paste{
-        text-align: center;
-    }
-    .form_  textarea{
-    margin-left: 50px;
-    width: 700px;
-    height: 300px; 
+*/
 
 }
 
-@media (min-width: 1200px){
 
-     pre {
-    margin-left: 100px;
-        width: 1110px;
-    height: 300px;
-     
-
+@media (max-width:  768px){
+    
+.conta_ button{
+        width: 90%;
+        
+        
     }
-    .form_  textarea{
-    margin-left: 60px;
-    width: 1200px;
-    height: 300px; 
 
+
+
+    
+
+
+}
+
+@media (min-width: 1000px){
+
+     
 
 }

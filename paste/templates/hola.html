@@ -16,23 +16,9 @@
 	
 	<script>hljs.initHighlightingOnLoad();</script>
 <style type="text/css">  
-	div .titulo {
-
-		
-		/*margin-left: -89px; */
-		
-
-/*
-	margin-left: -80px;
-	width: 800px;
-	height: 300px;
-	margin-right: 1400px;
-*/
-/*  ljs*/
-
-}
+	
 .inicio{
-	margin-right: -70px;
+	margin-right: 0px;
 }
 
 .cerrar{
@@ -95,25 +81,26 @@
 				<br>
 
 				
-				{% if request.session.userr %}
 
-				<div  class="titulo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>Autor : {{ request.session.userr }} - Creado el   {{ reporte.fecha }}</b></div>
-				{% else %}
-				<div class='titulo'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pastebin Anonimo -> creado el {{ reporte.fecha }}</div>
-				{% endif %}
-						<pre>
-							<code >
-							   {{ reporte.cuerpo }}
+						<div class="cont_">
+							<!-- Fecha de creacion -->
+							{% if request.session.userr %}
+
+							<div  class="titulo"><b>Autor : {{ request.session.userr }} - Creado el   {{ reporte.fecha }}</b></div>
+							{% else %}
+							<div class='titulo'> Pastebin Anonimo -> creado el {{ reporte.fecha }}</div>
+							{% endif %}
+							<pre><code >{{ reporte.cuerpo }}
 							</code>
-						</pre>
+							</pre>
+							<button id="crear_paste" onclick="window.location.href='/'" type="submit" name="submit">Crear Pastebin</button>
+						</div>
+						
 
 				  
-			<style type="text/css">
-			.hljs-meta{
-	margin-left: -469px;
-}
-			</style>
-			<button id="crear_paste" onclick="window.location.href='/'" type="submit" name="submit">Crear Pastebin</button>
+	
+		
+			
 		<!--
 			<div>
 				<h3>Boton agragado </h3>

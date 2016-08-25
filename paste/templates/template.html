@@ -1,27 +1,30 @@
-    {% load staticfiles %}
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	
 	<title>Pastebin {{ request.session.userr }}</title>
 	
-	
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="style.css">
 	    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
     <link rel="stylesheet" href="{% static 'css/paste.css' %}">
 	
-	<script src="js/jquery.js"></script>
+	
 	<style type="text/css">
 	.inicio{
-		margin-right: -74px;
+		margin-right: 0px;
 		
 	}
 
 	.cerrar{
 		margin-right: -75px;
 	}
+
+	
 	</style>
 </head>
 	<body>
@@ -29,10 +32,13 @@
 		<div class="">
         
            <header>
+        
+           <!--
+
            <nav class="navbar navbar-default navbar-fixed-top  ">
                <div class="container-fluid">
                    <div class="navbar-header">
-                   		<button type="button" class="navbar-toggle collapsed" data-toggle="collapsed" data-target='#navbar-1'>
+                   		<button type="button" class="navbar-toggle collapsed" data-toggle="collapsed" data-target='#navbar' aria-expanded="false" aria.controls="navbar">
 						   <span class='sr-only' >menu</span>
 						   <span class='icon-bar' ></span>
 						   <span class='icon-bar' ></span>
@@ -41,6 +47,50 @@
                        <a href="#" class="navbar-brand"><p class="icono_p"><b>Pastebin</b></p> </a>
                    </div>
                    <div class="collapse navbar-collapse" id="navbar-1">
+                   		<ul class="nav navbar-nav navbar-right">
+						   <!-- 1er menu 
+						   {% if request.session.userr %}
+						   <li >
+						   		<button class="cerrar" onclick="window.location.href='/q'" type="submit" name="submit">Cerrar Sesion</button>
+							
+						   		 <button onclick="window.location.href='/list'" type="submit" name="submit">Listar</button>
+						   </li> 
+						   {% else %}
+						   <li >
+						   		<button class="inicio" onclick="window.location.href='/log'" type="submit" name="submit">Iniciar Sesion</button>
+						   
+						   		<button onclick="window.location.href='/acct'" type="submit" name="submit"> Registrarse </button>
+						   </li>
+						   {% endif%}
+						   <!-- 2er menu 
+						   <li >
+								<a  class="btn" onclick="window.location.href='/'"> 
+								Create new Pastebin <span></span>
+								</a>
+							</li>
+						  
+					   </ul>
+                       
+                   </div>
+               </div>
+           </nav>
+
+           -->
+           
+           <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Pastebin</a>
+        </div>
+        
+
+          <div class="collapse navbar-collapse" id="navbar-1">
                    		<ul class="nav navbar-nav navbar-right">
 						   <!-- 1er menu -->
 						   {% if request.session.userr %}
@@ -66,8 +116,37 @@
 					   </ul>
                        
                    </div>
-               </div>
-           </nav>
+                   <!--  
+          {% if request.session.userr %}
+          				<ul>
+						   <li >
+						   		<button class="cerrar" onclick="window.location.href='/q'" type="submit" name="submit">Cerrar Sesion</button>
+							
+						   		 <button onclick="window.location.href='/list'" type="submit" name="submit">Listar</button>
+						   </li> 
+						   {% else %}
+						   <li >
+						   		<button class="inicio" onclick="window.location.href='/log'" type="submit" name="submit">Iniciar Sesion</button>
+						   
+						   		<button onclick="window.location.href='/acct'" type="submit" name="submit"> Registrarse </button>
+						   </li>
+						   {% endif%}
+						  </ul>
+						  -->
+ 
+          <!--
+            
+
+
+
+
+
+
+            -->
+       
+        </div>
+      
+    </nav> 
          </header>
         </div>
 
@@ -98,49 +177,63 @@
 		</div>-->
 		
 		<!-- -->
-	<form class="form_" method="post">
-	    {% csrf_token %}
-		
-		{{ form.cuerpo }}
+					<div class="conta_">
+						<form class="form_" method="post">
+						    {% csrf_token %}
+							
+							{{ form.cuerpo }}
 
-		<button type="submit" name="submit">Crear Pastebin</button>
-	</form>
-		<!--  -->
-		<!--
-			<div>
-				<p>
+							<button class="crear_ btn-default" type="submit" name="submit">Crear Pastebin</button>
+							
+							
+						</form>
 
-				{% if request.session.userr %}
-				  Gracias por iniciar sesion Welcome  {{ request.session.userr }}
-				  <button onclick="window.location.href='/q'" type="submit" name="submit">Cerrar Sesion</button>
-				  <br>
-				  <button onclick="window.location.href='/list'" type="submit" name="submit">Listar</button>
+					</div>
+					
+
+					
+						<!--  -->
+						<!--
+							<div>
+								<p>
+
+								{% if request.session.userr %}
+								  Gracias por iniciar sesion Welcome  {{ request.session.userr }}
+								  <button onclick="window.location.href='/q'" type="submit" name="submit">Cerrar Sesion</button>
+								  <br>
+								  <button onclick="window.location.href='/list'" type="submit" name="submit">Listar</button>
 
 
-						{% else %}
-					  		<h5> &nbsp;&nbsp;&nbsp;&nbsp; Inicie sesion para mas funcionalidades </h5>
-					  	<button onclick="window.location.href='/log'" type="submit" name="submit">Iniciar Seseion</button>
+										{% else %}
+									  		<h5> &nbsp;&nbsp;&nbsp;&nbsp; Inicie sesion para mas funcionalidades </h5>
+									  	<button onclick="window.location.href='/log'" type="submit" name="submit">Iniciar Seseion</button>
 
-				{% endif %}
+								{% endif %}
 
-				</p>
-				
-			</div>
+								</p>
+								
+							</div>
 
--->
+				-->
 
-			<div>
+							<div>
 
-				<!--		<h1>Botones agregados </h1>
-			<div>
-					<button onclick="window.location.href='/log'" type="submit" name="submit">Iniciar Seseion</button>
+								<!--		<h1>Botones agregados </h1>
+							<div>
+									<button onclick="window.location.href='/log'" type="submit" name="submit">Iniciar Seseion</button>
 
-				</div>
+								</div>
 
-	
+					
 
-				<p>Welcome {{ request.session.userr }} </p>  -->
-			</div>
+								<p>Welcome {{ request.session.userr }} </p>  -->
+							</div>
+
+
+
+
+
+
 
 			<footer><div class="container">
     Pastebin creado por Gerson, con un poco de <br />
@@ -149,9 +242,8 @@
 
 
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>	
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/go.min.js"></script>	
-<script src="js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 </body>
 </html>
