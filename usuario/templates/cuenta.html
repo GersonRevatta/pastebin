@@ -1,13 +1,16 @@
 <html>
 <head>
-	<title></title>
-</head>
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 
+    <title>Pastebin</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  
+</head>
 <style type="text/css">
 div {
-	text-align: center;
+  text-align: center;
 }
 button {
     background: red;
@@ -21,13 +24,13 @@ button {
     margin-left: 90px;
 }
 h3{
-	text-align: center;
+  text-align: center;
 }
 .cat{
-	margin-left: -45px;
+  margin-left: -45px;
 }
 body{
-	
+  
 rgba(226,226,226,1)), color-stop(50%, rgba(219,219,219,0.83)), color-stop(51%, rgba(209,209,209,0.83)), color-stop(100%, rgba(254,254,254,0.66)));
 background: -webkit-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,0.83) 50%, rgba(209,209,209,0.83) 51%, rgba(254,254,254,0.66) 100%);
 background: -o-linear-gradient(left, rgba(226,226,226,1) 0%, rgba(219,219,219,0.83) 50%, rgba(209,209,209,0.83) 51%, rgba(254,254,254,0.66) 100%);
@@ -36,13 +39,51 @@ background: linear-gradient(to right, rgba(226,226,226,1) 0%, rgba(219,219,219,0
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=1 );
 }
 .inicio{
-	margin-right: -70px;
+  margin-right: -70px;
 }
 </style>
 <body>
 <!--nav  -->
-<header>
-           <nav class="navbar navbar-default navbar-fixed-top  ">
+        
+           <header>
+              <nav class="navbar navbar-default navbar-static-top">
+              <div class="container">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#">Pastebin</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav navbar-right">
+                  
+                 
+                   <li>
+                    <a class="btn" onclick="window.location.href='/acct'" href="" >
+                      Registrarse
+                    </a>
+                    <!--
+                    <button onclick="window.location.href='/acct'" type="submit" name="submit"> Registrarse </button>
+                    -->
+                   </li>
+                
+                  
+                   <li >
+                    <a  class="btn" onclick="window.location.href='/'"> 
+                    Create new Pastebin <span></span>
+                    </a>
+                  </li>
+                  
+                 </ul>
+                </div>
+              </div>
+            </nav>    
+         </header>
+
+          <!-- <nav class="navbar navbar-default navbar-fixed-top  ">
                <div class="container-fluid">
                    <div class="navbar-header">
                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapsed" data-target='#navbar-1'>
@@ -54,29 +95,30 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
                        <a href="#" class="navbar-brand"><p class="icono_p"><b>Pastebin</b></p> </a>
                    </div>
                    <div class="" id="navbar-1">
-                   		<ul class="nav navbar-nav navbar-right">
-						   <!-- 1er menu -->
-						    
-						  <li >
-						   		
-						   	
-						   		<button onclick="window.location.href='/acct'" type="submit" name="submit"> Registrarse </button>
-						   								   		
-						   </li>
-						   
-						   <!-- 2er menu -->
-						   <li >
-								<a  class="btn" onclick="window.location.href='/'"> 
-								Create new Pastebin <span></span>
-								</a>
-							</li>
-						  
-					   </ul>
+                      <ul class="nav navbar-nav navbar-right">
+            
+                
+              <li >
+                  
+                
+                  <button onclick="window.location.href='/acct'" type="submit" name="submit"> Registrarse </button>
+                                    
+               </li>
+               
+            
+               <li >
+                <a  class="btn" onclick="window.location.href='/'"> 
+                Create new Pastebin <span></span>
+                </a>
+              </li>
+              
+             </ul>
                        
                    </div>
                </div>
            </nav>
-         </header>
+         -->
+        
 
 <!--  -->
 <br>
@@ -90,18 +132,33 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
 <br>
 
 <h3>Inicio de Sesion</h3>
-{{ contador }}
-<form method="post">{% csrf_token %}
-<div><label>Usuario</label>
-{{c.username}}
 
-</div>
-<div><label>Contraseña</label> 
-	{{ c.password }}
-</div>
-<div class="cat"><button class="btn-default">Iniciar</button></div>
+
+<form method="post">{% csrf_token %}
+  <center>
+        <table>
+          <tr>
+            <td><label>Usuario</label> </td>
+            <td>{{c.username}}
+              {{ c.username.errors }}
+            </td>
+          </tr>
+          <tr> 
+            <td> <label>Contraseña</label></td>
+            <td>  {{ c.password }}
+                  {{ c.password.errors }}
+            </td>
+          </tr>
+        
+        </table>
+        <button class="btn-default">Iniciar</button>
+  </center>
 
 </form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 </body>
 </html>
 

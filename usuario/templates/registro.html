@@ -22,13 +22,14 @@
 		text-align: center;
 	}
 	button {
+		width: 25%;
+	margin-left: 0px;
     background: red;
     padding: 10px;
     border-radius: 10px;
     border: none;
     font-weight: bold;
     color: white;
-    margin-left: 29px;
     margin-top: 10px;
     margin-left: 90px;
 }
@@ -45,7 +46,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
 }
 </style>
 <body>
-
 		<header>
 		          <nav class="navbar navbar-default navbar-static-top">
 		          <div class="container">
@@ -59,30 +59,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
 		              <a class="navbar-brand" href="#">Pastebin</a>
 		            </div>
 		            <div id="navbar" class="navbar-collapse collapse">
-		              <ul class="nav navbar-nav navbar-right">
-								  
-								  
+		              <ul class="nav navbar-nav navbar-right">								 
 								   <li >
 								   		<a onclick="window.location.href='/log'" href="">
 								   			Iniciar Sesion
 								   		</a>
-								   
 								   </li>
-								   
-								   
-								  
 								   <li >
-										<a  class="btn" onclick="window.location.href='/'"> 
-										Create new Pastebin <span></span>
+										<a class="btn"  href=""  onclick="window.location.href='/'"> 
+										Create new Pastebin 
 										</a>
 									</li>
-								  
 							   </ul>
 		            </div>
 		          </div>
 		        </nav>    
          </header>
-
+		
 		
 	
 		<br>
@@ -125,14 +118,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', end
 						</td>
 					</tr>
 				</table>
+				<button class="btn  btn-default">Registro</button>
 				</center>	
-		
-				<input type="submit" name="submit" value="Registro">
+				
+				<!--<input type="submit" name="submit" value="Registro"> -->
 			</form>
 
 		</div>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>	
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
-</html>
