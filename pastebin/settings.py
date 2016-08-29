@@ -75,11 +75,15 @@ WSGI_APPLICATION = 'pastebin.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
-
+#
+#DATABASES = { 'default': { 'ENGINE': 'mysql_cymysql', 'NAME': 'nombre_bd', 'USER': 'root', 'PASSWORD': 'psw', 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME':'pastebin',
+        'USER':'pastebin',
+        'PASSWORD':'Uu356t3rd4rt6i84e%$%'        
     }
 }
 
